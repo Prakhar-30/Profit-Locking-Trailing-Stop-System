@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-dark-900 text-cyber-100 font-sans antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233a86ff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-dark-800/40 backdrop-blur-xl border border-cyber-800/30 rounded-xl;
+  }
+
+  .glass-panel-hover {
+    @apply glass-panel hover:border-cyber-700/50 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-transparent border border-cyber-600 text-cyber-400 font-mono font-semibold rounded-lg transition-all duration-300;
+    @apply hover:border-neon-cyan hover:text-neon-cyan hover:shadow-neon-cyan;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border border-cyber-700 text-cyber-300 font-mono rounded-lg transition-all duration-300;
+    @apply hover:border-cyber-500 hover:text-cyber-200;
+  }
+
+  .btn-danger {
+    @apply px-6 py-3 bg-transparent border border-red-600/50 text-red-400 font-mono rounded-lg transition-all duration-300;
+    @apply hover:border-neon-pink hover:text-neon-pink hover:shadow-neon-pink;
+  }
+
+  .btn-success {
+    @apply px-6 py-3 bg-transparent border border-green-600/50 text-green-400 font-mono rounded-lg transition-all duration-300;
+    @apply hover:border-neon-green hover:text-neon-green hover:shadow-neon-green;
+  }
+
+  .input-cyber {
+    @apply w-full px-4 py-3 bg-dark-700/50 border border-cyber-800/50 rounded-lg text-cyber-100 font-mono;
+    @apply focus:outline-none focus:border-cyber-600 focus:ring-1 focus:ring-cyber-600/50 transition-all duration-200;
+    @apply placeholder-cyber-700;
+  }
+
+  .card-stat {
+    @apply glass-panel p-4;
+  }
+
+  .label-cyber {
+    @apply block text-sm font-mono text-cyber-300 mb-2 tracking-wider uppercase;
+  }
+
+  .text-glow {
+    @apply text-neon-cyan;
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  .border-glow {
+    border-color: theme('colors.neon.cyan');
+    box-shadow: 0 0 10px theme('colors.neon.cyan');
+  }
+
+  .grid-background {
+    background-image:
+      linear-gradient(to right, rgba(58, 134, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(58, 134, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .status-active {
+    @apply text-neon-green border-neon-green/50;
+  }
+
+  .status-paused {
+    @apply text-neon-yellow border-neon-yellow/50;
+  }
+
+  .status-past {
+    @apply text-cyber-600 border-cyber-600/50;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-scan {
+    animation: scan 2s linear infinite;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.dark.800');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.cyber.700');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.cyber.600');
+}
+
+/* Loading animation */
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: '';
+  }
+  40% {
+    content: '.';
+  }
+  60% {
+    content: '..';
+  }
+  80%, 100% {
+    content: '...';
+  }
+}

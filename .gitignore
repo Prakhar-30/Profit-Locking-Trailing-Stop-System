@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+out/
+dist/
+frontend/dist/
+cache/
+frontend/.cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+frontend/.env
+frontend/.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Foundry
+/lib/
+broadcast/
+cache_forge/
+
+# Local deployment data
+deployments/
+frontend/src/lib/bytecode/*.json
+
+# Misc
+*.tsbuildinfo
+.eslintcache
