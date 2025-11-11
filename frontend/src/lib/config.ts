@@ -1,12 +1,12 @@
 import { NetworkConfig, ContractAddresses } from '../types';
 
-// Get environment variables
-const SEPOLIA_RPC = import.meta.env.VITE_SEPOLIA_RPC || 'https://ethereum-sepolia-rpc.publicnode.com';
-const REACTIVE_RPC = import.meta.env.VITE_REACTIVE_RPC || 'https://lasna-rpc.rnk.dev/';
-const SEPOLIA_CHAIN_ID = Number(import.meta.env.VITE_SEPOLIA_CHAIN_ID) || 11155111;
-const REACTIVE_CHAIN_ID = Number(import.meta.env.VITE_REACTIVE_CHAIN_ID) || 5318007;
-const SEPOLIA_ROUTER = import.meta.env.VITE_SEPOLIA_ROUTER || '0xC532a74256D3Db42D0Bf7a0400fEFDbad7694008';
-const SEPOLIA_CALLBACK_SENDER = import.meta.env.VITE_SEPOLIA_CALLBACK_SENDER || '0xc9f36411C9897e7F959D99ffca2a0Ba7ee0D7bDA';
+// Hardcoded configuration values (no .env needed)
+const SEPOLIA_RPC = 'https://ethereum-sepolia-rpc.publicnode.com';
+const REACTIVE_RPC = 'https://lasna-rpc.rnk.dev/';
+const SEPOLIA_CHAIN_ID = 11155111;
+const REACTIVE_CHAIN_ID = 5318007;
+const SEPOLIA_ROUTER = '0xC532a74256D3Db42D0Bf7a0400fEFDbad7694008';
+const SEPOLIA_CALLBACK_SENDER = '0xc9f36411C9897e7F959D99ffca2a0Ba7ee0D7bDA';
 
 // Network configurations
 export const NETWORKS: Record<number, NetworkConfig> = {
