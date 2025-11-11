@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Plus, Activity, Pause, XCircle, Filter } from 'lucide-react';
+import { Plus, Activity, Pause, XCircle } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { PositionStatus } from '../types';
 import { PositionCard } from '../components/PositionCard';
-import toast from 'react-hot-toast';
 
 export const Dashboard = () => {
   const { positions, deployment, setShowPositionModal } = useStore();
